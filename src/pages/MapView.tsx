@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import MapComponent from '@/components/MapComponent';
 const InteractiveMap = React.lazy(() => import('@/components/InteractiveMap'));
-import CoordinatesDisplay from '@/components/CordinatesDisplay';
 import Image360Viewer from '@/components/Image360Viewer';
 import ThemeToggle from '@/components/ThemeToggle';
 
@@ -48,10 +46,7 @@ const MapView: React.FC = () => {
         </p>
       </div>
       
-      <MapComponent 
-        onCoordinatesUpdate={handleCoordinatesUpdate} 
-        onShow360Image={handleShow360Image} 
-      />
+
 
       <div className="mt-8">
         <h2 className="text-2xl font-semibold mb-4">Interactive Map (Add/Edit Hotspots)</h2>
@@ -59,8 +54,7 @@ const MapView: React.FC = () => {
           <InteractiveMap />
         </React.Suspense>
       </div>
-      
-      <CoordinatesDisplay coordinates={coordinates} />
+
       
       {/* <Image360Viewer 
         lat={coordinates.lat} 

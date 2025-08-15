@@ -4,8 +4,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { MapPin, Building2, Plus, BarChart3, Map } from "lucide-react";
 import { Link } from "react-router-dom";
-import MarkerForm from "./MarkerForm";
-import CollegeBuildingForm from "./CollegeBuildingFormProps";
 import { useToast } from "@/hooks/use-toast";
 import ThemeToggle from "./ThemeToggle";
 
@@ -167,7 +165,7 @@ const Dashboard = () => {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <MarkerForm onSubmit={handleMarkerSubmit} />
+       
         </CardContent>
         </Card>
       </TabsContent>
@@ -184,7 +182,7 @@ const Dashboard = () => {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <CollegeBuildingForm onSubmit={handleBuildingSubmit} />
+          
         </CardContent>
         </Card>
       </TabsContent>
