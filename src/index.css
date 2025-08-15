@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Admin Dashboard Design System with Beautiful Gradients */
+
+@layer base {
+  :root {
+    /* High contrast accessible colors */
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
+
+    /* Card system with subtle contrast */
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
+    --card-glass: 0 0% 16%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Primary - High contrast blue */
+    --primary: 213 94% 68%;
+    --primary-foreground: 0 0% 5%;
+    --primary-dark: 213 94% 58%;
+    --primary-light: 213 94% 78%;
+
+    /* Secondary - Accessible gray */
+    --secondary: 0 0% 25%;
+    --secondary-foreground: 0 0% 95%;
+    --secondary-dark: 0 0% 20%;
+    --secondary-light: 0 0% 30%;
+
+    /* Muted colors */
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 213 94% 68%;
+    --accent-foreground: 0 0% 5%;
+
+    /* Status colors - high contrast */
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 0 0% 95%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 95%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 5%;
+
+    /* UI elements */
+    --border: 0 0% 25%;
+    --input: 0 0% 16%;
+    --ring: 213 94% 68%;
+
+    --radius: 0.75rem;
+
+    /* Subtle gradient definitions */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--secondary-light)) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(var(--card-glass)) 0%, hsl(var(--card)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--card)) 100%);
+
+    /* Accessible shadows */
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.2);
+    --shadow-card: 0 4px 16px hsl(0 0% 0% / 0.3);
+    --shadow-button: 0 2px 8px hsl(var(--primary) / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+}
+
+@layer components {
+  /* Glass card effect */
+  .glass-card {
+    @apply backdrop-blur-xl border border-white/10;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Gradient button variants */
+  .btn-gradient-primary {
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-button);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-gradient-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px hsl(var(--primary) / 0.6);
+  }
+
+  .btn-gradient-secondary {
+    background: var(--gradient-secondary);
+    box-shadow: 0 4px 16px hsl(var(--secondary) / 0.4);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-gradient-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px hsl(var(--secondary) / 0.6);
+  }
+
+  /* Hero gradient text */
+  .text-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Animated background */
+  .bg-animated {
+    background: var(--gradient-hero);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Form input styling */
+  .input-glass {
+    @apply backdrop-blur-sm border border-white/20 bg-white/5;
+    transition: var(--transition-smooth);
+  }
+
+  .input-glass:focus {
+    @apply border-primary/50 bg-white/10;
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
